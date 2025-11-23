@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 # YouTube API Key
-YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "AIzaSyALokJyL06eUdY1hHyiS9zv7J5cVwQW3W8")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "YOUTUBE_API_KEY")
 DB_PATH = "youtube_trending.db"
 
 # Category names
