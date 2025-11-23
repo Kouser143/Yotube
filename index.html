@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Trending Analysis - India</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-title">
+                    <h1>YouTube Trending Analysis - India</h1>
+                    <p>Real-time trending data & insights</p>
+                </div>
+                <div class="header-actions">
+                    <button id="fetchBtn" class="btn btn-primary">Fetch Trending Data</button>
+                    <button id="refreshBtn" class="btn btn-secondary">Refresh Dashboard</button>
+                    <button id="resetBtn" class="btn btn-danger">Reset Data</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Status Message -->
+        <div id="statusMsg" class="status-message"></div>
+
+        <!-- KPI Cards -->
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <div class="kpi-label">Total Videos</div>
+                <div class="kpi-value" id="totalVideos">0</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Unique Channels</div>
+                <div class="kpi-value" id="totalChannels">0</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Total Views</div>
+                <div class="kpi-value" id="totalViews">0</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Total Likes</div>
+                <div class="kpi-value" id="totalLikes">0</div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+
+            <!-- Top 5 Trending Videos -->
+            <section class="card highlight">
+                <h2>🔥 Top 5 Trending Videos in India</h2>
+                <div class="trending-videos-grid" id="trendingVideosGrid"></div>
+            </section>
+
+            <!-- Top Channels Chart -->
+            <section class="card">
+                <h2>Top 10 Channels by Views</h2>
+                <div class="chart-container">
+                    <canvas id="topChannelsChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Popular Categories -->
+            <section class="card">
+                <h2>Popular Content Categories</h2>
+                <div class="chart-container">
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+                <div class="table-responsive">
+                    <table id="categoriesTable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Videos</th>
+                                <th>Total Views</th>
+                                <th>Total Likes</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Views vs Likes Analysis -->
+            <section class="card">
+                <h2>📊 Views vs Likes Analysis</h2>
+                <p class="card-subtitle">Based on Top 15 Trending Videos - Are people really enjoying or just viewing?</p>
+                <div class="chart-container">
+                    <canvas id="viewsLikesChart"></canvas>
+                </div>
+                <div class="table-responsive">
+                    <table id="viewsLikesTable">
+                        <thead>
+                            <tr>
+                                <th>Video Title</th>
+                                <th>Channel</th>
+                                <th>Views</th>
+                                <th>Likes</th>
+                                <th>Engagement Rate</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Insights -->
+            <section class="card insights">
+                <h2>💡 Key Insights</h2>
+                <div id="insightsList"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
